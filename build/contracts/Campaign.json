@@ -1,0 +1,272 @@
+{
+  "contract_name": "Campaign",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isSuccess",
+      "outputs": [
+        {
+          "name": "isIndeed",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "withdrawFunds",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "deadline",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "goal",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "fundsRaised",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "hasFailed",
+      "outputs": [
+        {
+          "name": "hasIndeed",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "funderStructs",
+      "outputs": [
+        {
+          "name": "amountContributed",
+          "type": "uint256"
+        },
+        {
+          "name": "amountRefunded",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "requestRefund",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "contribute",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": true,
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "name": "campaignDuration",
+          "type": "uint256"
+        },
+        {
+          "name": "campaignGoal",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogContribution",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "funder",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogRefundSent",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "beneficiary",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogWithdrawal",
+      "type": "event"
+    }
+  ],
+  "unlinked_binary": "0x6060604052341561000f57600080fd5b60405160408061054e83398101604052808051919060200180519150505b60008054600160a060020a03191633600160a060020a031617905543820160015560028190555b50505b6104e8806100666000396000f300606060405236156100885763ffffffff60e060020a6000350416630b6c754b811461008d57806324600fc3146100b457806329dcb0cf146100db57806340193883146101005780636681b9fd14610125578063708b1fed1461014a5780638b3df465146101715780638da5cb5b146101a8578063d5cef133146101d7578063d7bb99ba146101fe575b600080fd5b341561009857600080fd5b6100a061021a565b604051901515815260200160405180910390f35b34156100bf57600080fd5b6100a0610226565b604051901515815260200160405180910390f35b34156100e657600080fd5b6100ee6102e9565b60405190815260200160405180910390f35b341561010b57600080fd5b6100ee6102ef565b60405190815260200160405180910390f35b341561013057600080fd5b6100ee6102f5565b60405190815260200160405180910390f35b341561015557600080fd5b6100a06102fb565b604051901515815260200160405180910390f35b341561017c57600080fd5b610190600160a060020a0360043516610317565b60405191825260208201526040908101905180910390f35b34156101b357600080fd5b6101bb610330565b604051600160a060020a03909116815260200160405180910390f35b34156101e257600080fd5b6100a061033f565b604051901515815260200160405180910390f35b6100a0610415565b604051901515815260200160405180910390f35b60025460035410155b90565b60008054819033600160a060020a0390811691161461024457600080fd5b61024c61021a565b151561025757600080fd5b50600054600160a060020a0330811631911681156108fc0282604051600060405180830381858888f19350505050151561029057600080fd5b6000547fb4214c8c54fc7442f36d3682f59aebaf09358a4431835b30efb29d52cf9e1e9190600160a060020a031682604051600160a060020a03909216825260208201526040908101905180910390a1600191505b5090565b60015481565b60025481565b60035481565b6000600254600354108015610311575060015443115b90505b90565b6004602052600090815260409020805460019091015482565b600054600160a060020a031681565b600160a060020a0333166000908152600460205260408120600181015490540380151561036b57600080fd5b6103736102fb565b151561037e57600080fd5b600160a060020a0333166000818152600460205260409081902060010180548401905582156108fc0290839051600060405180830381858888f1935050505015156103c857600080fd5b7fdd896e09a507baf21c108627cf41469f315fb779fe323f5e1c6154fd5d869e693382604051600160a060020a03909216825260208201526040908101905180910390a1600191505b5090565b600034151561042357600080fd5b61042b61021a565b1561043557600080fd5b61043d6102fb565b1561044757600080fd5b600380543490810190915533600160a060020a038116600090815260046020526040908190208054840190557f370510fa7e8c74204b8d2fd52b7a0837e535ea0c1491fd4e13730ce825e40524929051600160a060020a03909216825260208201526040908101905180910390a15060015b905600a165627a7a72305820c9d0e01598db07243d2adbcef3c97008aad81c4e435e20d25321a9d1dad958540029",
+  "networks": {
+    "1504680088021": {
+      "events": {
+        "0x370510fa7e8c74204b8d2fd52b7a0837e535ea0c1491fd4e13730ce825e40524": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "sender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogContribution",
+          "type": "event"
+        },
+        "0xdd896e09a507baf21c108627cf41469f315fb779fe323f5e1c6154fd5d869e69": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "funder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogRefundSent",
+          "type": "event"
+        },
+        "0xb4214c8c54fc7442f36d3682f59aebaf09358a4431835b30efb29d52cf9e1e91": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "beneficiary",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogWithdrawal",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x5c6370804aa14dd9bd2bbad647b47ddc594b3801",
+      "updated_at": 1504681483216
+    }
+  },
+  "schema_version": "0.0.5",
+  "updated_at": 1504681483216
+}
